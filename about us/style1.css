@@ -1,0 +1,354 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.75),
+    rgba(0,0,0,0.85)),
+    url("images/phantom.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+}
+
+/* HEADER */
+header{
+    background: rgba(0,0,0,0.9);
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-bottom: 5px solid red;
+
+    transform: skew(-3deg);
+
+    box-shadow:
+    0 0 15px red,
+    0 0 30px black;
+}
+
+header h1{
+    font-size: 50px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: white;
+
+    text-shadow:
+    3px 3px 0 red,
+    6px 6px 10px black;
+
+    transform: skew(3deg);
+}
+
+/* MAIN CONTAINER */
+.container{
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    padding: 50px;
+}
+
+/* STORY BOX */
+.story-box{
+    width: 220px;
+
+    background: rgba(15,15,15,0.92);
+
+    border: 3px solid white;
+
+    overflow: hidden;
+
+    position: relative;
+
+    transform: rotate(-2deg);
+
+    transition: 0.3s ease;
+
+    box-shadow:
+    8px 8px 0 red,
+    0 0 15px black;
+}
+
+/* ALTERNATING ROTATION */
+.story-box:nth-child(even){
+    transform: rotate(2deg);
+}
+
+.story-box:hover{
+    transform: scale(1.08) rotate(0deg);
+
+    border-color: red;
+
+    box-shadow:
+    0 0 20px red,
+    0 0 40px crimson;
+}
+
+.story-box a{
+    text-decoration: none;
+
+    color: white;
+}
+
+.story-box img{
+    width: 100%;
+
+    height: 320px;
+
+    object-fit: cover;
+
+    transition: 0.3s ease;
+}
+
+.story-box:hover img{
+    filter:
+    brightness(1.2)
+    contrast(1.1);
+}
+
+/* CHARACTER NAME */
+.story-box h2{
+    text-align: center;
+
+    padding: 15px;
+
+    font-size: 24px;
+
+    background: black;
+
+    border-top: 3px solid red;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.story-box:hover h2{
+    background: crimson;
+
+    color: white;
+}
+
+/* STORY PAGE */
+.story-page{
+    width: 85%;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    background: rgba(0,0,0,0.88);
+
+    border: 4px solid red;
+
+    padding: 40px;
+
+    box-shadow:
+    0 0 20px red,
+    10px 10px 0 black;
+
+    transform: skew(-2deg);
+}
+
+.story-page h2{
+    font-size: 45px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+    3px 3px 0 red;
+}
+
+.story-page img{
+    width: 100%;
+
+    max-width: 550px;
+
+    border: 4px solid white;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+    0 0 15px red;
+}
+
+.story-page p{
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    font-family: Arial, sans-serif;
+}
+
+/* MOBILE */
+@media(max-width: 768px){
+
+    header h1{
+        font-size: 32px;
+    }
+
+    .container{
+        padding: 20px;
+    }
+
+    .story-box{
+        width: 170px;
+    }
+
+    .story-box img{
+        height: 250px;
+    }
+
+    .story-page{
+        width: 95%;
+    }
+
+    .story-page h2{
+        font-size: 30px;
+    }
+}
+footer{
+    background: rgba(0,0,0,0.85);
+
+    text-align: center;
+
+    padding: 15px;
+
+    border-top: 3px solid red;
+
+    box-shadow: 0 0 10px red;
+
+    margin-top: auto;
+}
+
+/* ============================= */
+/* MAIN MENU ONLY (SCOPED STYLE) */
+/* ============================= */
+
+.menu-body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.75),
+        rgba(0,0,0,0.85)),
+        url("images/phantom.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* override global body flex column ONLY for menu */
+.menu-body {
+    flex-direction: row;
+}
+
+/* MENU BOX (isolated version) */
+.menu-body .menu {
+    background: rgba(0, 0, 0, 0.92);
+    padding: 40px 60px;
+    border: 3px solid red;
+    box-shadow: 0 0 30px red;
+    text-align: center;
+    min-width: 300px;
+}
+
+/* MENU TITLE */
+.menu-body .menu h1 {
+    color: red;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+/* MENU LINKS */
+.menu-body .menu a {
+    display: block;
+    margin: 15px 0;
+    padding: 15px;
+    background: red;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.menu-body .menu a:hover {
+    background: black;
+    color: red;
+    border: 2px solid red;
+    transform: scale(1.08);
+}
+
+/* MENU FOOTER ONLY */
+.menu-body .menu footer {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+/* TOP LEFT LOGO BUTTON */
+.logo-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 999;
+}
+
+.logo-btn img {
+    width: 70px;
+    height: 50px;
+
+    /* remove circle */
+    border-radius: 6px; /* slight rounding, remove if you want sharp corners */
+
+    border: 2px solid red;
+    box-shadow: 0 0 10px red;
+    transition: 0.3s ease;
+
+    object-fit: cover;
+}
+
+.logo-btn img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px red;
+}
