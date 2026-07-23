@@ -1,5 +1,4 @@
-CREATE DATABASE phantomdb;
-USE phantomdb;
+USE if0_42440932_phantomdb;
 
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,

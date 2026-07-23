@@ -1,14 +1,12 @@
 <?php
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "phantomdb";
 
-$conn = mysqli_connect(
-    "localhost",
-    "root",
-    "",
-    "phantomdb"
-);
+$conn = mysqli_connect($host, $user, $password, $database);
 
 if (!$conn) {
-    die("Connection Failed: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
-
 ?>
